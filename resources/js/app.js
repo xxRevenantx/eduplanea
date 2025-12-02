@@ -598,3 +598,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     calendar.render()
 })
+
+

@@ -64,7 +64,6 @@
                                        hover:bg-indigo-100 dark:hover:bg-indigo-900/60 transition-colors">
                             Ir al panel
                         </a>
-
                     @else
                         {{-- <a href="{{ route('login') }}"
                             class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium
@@ -287,23 +286,22 @@
                                 {{-- CTA principal --}}
                                 <div class="flex flex-col sm:flex-row gap-3 mt-3">
 
-                                     {{-- Botones de acceso --}}
-                                @if (Route::has('login'))
-                                    <nav class="flex items-center gap-3 text-sm">
-                                        @auth
-                                        <a href="{{ url('/dashboard') }}"
-                                            class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-indigo-700 text-white text-sm font-medium shadow-xs hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-slate-50 dark:focus:ring-offset-slate-900 transition-all">
-                                            Ir al panel docente
-                                        </a>
-                                        @else
+                                    {{-- Botones de acceso --}}
+                                    @if (Route::has('login'))
+                                        <nav class="flex items-center gap-3 text-sm">
+                                            @auth
+                                                <a href="{{ url('/dashboard') }}"
+                                                    class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-indigo-700 text-white text-sm font-medium shadow-xs hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-slate-50 dark:focus:ring-offset-slate-900 transition-all">
+                                                    Ir al panel docente
+                                                </a>
+                                            @else
+                                                <button type="button" id="open-register-modal"
+                                                    class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-indigo-700 text-white text-sm font-medium shadow-xs hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-slate-50 dark:focus:ring-offset-slate-900 transition-all">
+                                                    Crear cuenta docente
+                                                </button>
 
-                                        <button type="button" id="open-register-modal"
-                                        class="inline-flex items-center justify-center px-4 py-2 rounded-md bg-indigo-700 text-white text-sm font-medium shadow-xs hover:bg-indigo-800 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-offset-2 focus:ring-offset-slate-50 dark:focus:ring-offset-slate-900 transition-all">
-                                        Crear cuenta docente
-                                    </button>
-
-                                    <a href="{{ Route::has('login') ? route('login') : '#' }}"
-                                        class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium
+                                                <a href="{{ Route::has('login') ? route('login') : '#' }}"
+                                                    class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-medium
                                         border border-slate-200 dark:border-slate-700
                                         text-slate-800 dark:text-slate-50
                                         bg-white/80 dark:bg-slate-900/70
@@ -311,11 +309,11 @@
                                         dark:hover:border-indigo-400 dark:hover:text-indigo-200
                                         hover:bg-slate-50 dark:hover:bg-slate-900
                                         transition-colors">
-                                        Iniciar sesión
-                                    </a>
-                                        @endauth
-                                    </nav>
-                                @endif
+                                                    Iniciar sesión
+                                                </a>
+                                            @endauth
+                                        </nav>
+                                    @endif
 
 
                                 </div>
@@ -894,7 +892,7 @@
                     </div>
 
                     {{-- Remember me --}}
-                     <flux:checkbox name="remember" :label="__('Remember me')" :checked="old('remember')" />
+                    <flux:checkbox name="remember" :label="__('Remember me')" :checked="old('remember')" />
 
                     {{-- Botón de acceso --}}
                     <div class="flex flex-col gap-2 mt-1">
